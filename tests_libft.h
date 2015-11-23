@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   maintest.c                                         :+:      :+:    :+:   */
+/*   tests_libft.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngrasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 11:18:14 by ngrasset          #+#    #+#             */
-/*   Updated: 2015/11/23 17:39:44 by ngrasset         ###   ########.fr       */
+/*   Created: 2015/11/23 17:21:22 by ngrasset          #+#    #+#             */
+/*   Updated: 2015/11/23 17:37:45 by ngrasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdio.h>
-#include <string.h>
-#include "tests_libft.h"
+#ifndef TESTS_LIBFT_H
+# define TESTS_LIBFT_H
+# include <libft.h>
+# include <stdio.h>
+# include <string.h>
 
-int			main(void)
-{
-	test_memset();
-	test_memalloc();
-	test_bzero();
-	test_memcpy();
-	test_memccpy();
-	test_memmove();
-	return (0);
-}
+void	test_memccpy(void);
+void	test_memcpy(void);
+void	test_bzero(void);
+void	test_memset(void);
+void	test_memdel(void *ptr);
+void	test_memalloc(void);
+void	test_memmove(void);
+
+#endif
