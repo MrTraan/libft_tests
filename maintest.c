@@ -6,12 +6,65 @@
 /*   By: ngrasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 11:18:14 by ngrasset          #+#    #+#             */
-/*   Updated: 2015/11/23 14:29:24 by ngrasset         ###   ########.fr       */
+/*   Updated: 2015/11/23 16:30:30 by ngrasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 #include <stdio.h>
+#include <string.h>
+
+void		test_memccpy(void)
+{
+	char	*src = "abcdefghi";
+	char	*dst_test;
+	char	*dst_true;
+	char	*ret_test;
+	char	*ret_true;
+
+	printf("\nTesting ft_memccpy\n");
+	dst_test = (char *)malloc(10);
+	dst_true = (char *)malloc(10);
+	dst_test[9] = '\0';
+	dst_true[9] = '\0';
+	ft_memset(dst_test, 'b', 9);
+	ft_memset(dst_true, 'b', 9);
+	ret_test = ft_memccpy(dst_test, src, 'd', 9);
+	ret_true = memccpy(dst_true, src, 'd', 9);
+	printf("%-20s %-20s %-20s\n%-20s %-20s %-20s\n", "Expected result:", dst_true,
+			ret_true, "Actual Result:", dst_test, ret_test);
+	ret_test = ft_memccpy(dst_test, src, 'z', 9);
+	ret_true = memccpy(dst_true, src, 'z', 9);
+	printf("%-20s %-20s %-20s\n%-20s %-20s %-20s\n", "Expected result:", dst_true,
+			ret_true, "Actual Result:", dst_test, ret_test);
+	free(dst_test);
+	free(dst_true);
+}
+
+void		test_memcpy(void)
+{
+	char	*src = "aaaaaaaaa";
+	char	*dst_test;
+	char	*dst_true;
+
+	printf("\nTesting ft_memcpy\n");
+	dst_test = (char *)malloc(10);
+	dst_true = (char *)malloc(10);
+	dst_test[9] = '\0';
+	dst_true[9] = '\0';
+	ft_memset(dst_test, 'b', 9);
+	ft_memset(dst_true, 'b', 9);
+	ft_memcpy(dst_test, src, 3);
+	memcpy(dst_true, src, 3);
+	printf("%-20s %s\n%-20s %s\n",
+			"Expected result:", dst_true, "Actual Result:", dst_test);
+	ft_memcpy(dst_test, src, 8);
+	memcpy(dst_true, src, 8);
+	printf("%-20s %s\n%-20s %s\n",
+			"Expected result:", dst_true, "Actual Result:", dst_test);
+	free(dst_test);
+	free(dst_true);
+}
 
 void		test_bzero(void)
 {
@@ -91,5 +144,7 @@ int			main(void)
 	test_memset();
 	test_memalloc();
 	test_bzero();
+	test_memcpy();
+	test_memccpy();
 	return (0);
 }
