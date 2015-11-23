@@ -6,11 +6,28 @@
 /*   By: ngrasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 17:24:06 by ngrasset          #+#    #+#             */
-/*   Updated: 2015/11/23 17:41:25 by ngrasset         ###   ########.fr       */
+/*   Updated: 2015/11/23 18:26:34 by ngrasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests_libft.h"
+
+void		test_memchr(void)
+{
+	char	*src = "abcdedfigh";
+	char	*ret_test;
+	char	*ret_true;
+
+	printf("\nTesting ft_memchr\n");
+	ret_test = ft_memchr(src, 'd', 10);
+	ret_true = memchr(src, 'd', 10);
+	printf("%-20s %-20s\n%-20s %-20s\n", "Expected result:", ret_true,
+			"Actual Result:", ret_test);
+	ret_test = ft_memchr(src, 'z', 10);
+	ret_true = memchr(src, 'z', 10);
+	printf("\n%-20s %-20s\n%-20s %-20s\n", "Expected result:", ret_true,
+			"Actual Result:", ret_test);
+}
 
 void		test_memmove(void)
 {
