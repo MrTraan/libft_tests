@@ -1,0 +1,3 @@
+Simple tests to check libft functions
+
+Default Makefile configuration will look to ../libft folder to find libft.h and libft.a
