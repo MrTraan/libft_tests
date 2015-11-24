@@ -6,11 +6,33 @@
 /*   By: ngrasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 15:18:16 by ngrasset          #+#    #+#             */
-/*   Updated: 2015/11/24 16:48:52 by ngrasset         ###   ########.fr       */
+/*   Updated: 2015/11/24 17:35:16 by ngrasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests_libft.h"
+
+void	test_strlcat(void)
+{
+	char	*src = " partie deux";
+	char	true_dst1[23] = {'p', 'a', 'r', 't', 'i', 'e', ' ', 'u', 'n' ,'\0'};
+	char	test_dst1[23] = {'p', 'a', 'r', 't', 'i', 'e', ' ', 'u', 'n' ,'\0'};
+	char	true_dst2[30] = {'p', 'a', 'r', 't', 'i', 'e', ' ', 'u', 'n' ,'\0'};
+	char	test_dst2[30] = {'p', 'a', 'r', 't', 'i', 'e', ' ', 'u', 'n' ,'\0'};
+	size_t	true_ret1;
+	size_t	true_ret2;
+	size_t	test_ret1;
+	size_t	test_ret2;
+
+	printf("\nTesting strlcat\n");
+	true_ret1 = strlcat(true_dst1, src, 4);
+	test_ret1 = ft_strlcat(test_dst1, src, 4);
+	true_ret2 = strlcat(true_dst2, src, 25);
+	test_ret2 = ft_strlcat(test_dst2, src, 25);
+	printf("%-20s %-30s %-10lu %-30s %-10lu\n%-20s %-30s %-10lu %-30s %-10lu\n",
+			"Expected result:", true_dst1, true_ret1, true_dst2, true_ret2,
+				"Actual result:", test_dst1, test_ret1, true_dst2, test_ret2);
+}
 
 void	test_strncat(void)
 {
