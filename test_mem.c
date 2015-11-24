@@ -6,11 +6,22 @@
 /*   By: ngrasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 17:24:06 by ngrasset          #+#    #+#             */
-/*   Updated: 2015/11/24 14:48:16 by ngrasset         ###   ########.fr       */
+/*   Updated: 2015/11/24 15:10:26 by ngrasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests_libft.h"
+
+void		test_memcmp(void)
+{
+	char	*s1 = "c'est pareil au debut";
+	char	*s2 = "c'est pareil a la fin";
+
+	printf("\nTesting ft_memcmp\n");
+	printf("%-20s %-10d %-10d\n%-20s %-10d %-10d\n", "Expected Result:",
+			memcmp(s1, s2, 10), memcmp(s1, s2, 20), "Actual Result:",
+				ft_memcmp(s1, s2, 10), ft_memcmp(s1, s2, 20));
+}
 
 void		test_memchr(void)
 {

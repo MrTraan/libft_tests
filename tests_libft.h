@@ -6,7 +6,7 @@
 /*   By: ngrasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 17:21:22 by ngrasset          #+#    #+#             */
-/*   Updated: 2015/11/23 18:25:31 by ngrasset         ###   ########.fr       */
+/*   Updated: 2015/11/24 15:05:29 by ngrasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ void	test_memdel(void *ptr);
 void	test_memalloc(void);
 void	test_memmove(void);
 void	test_memchr(void);
+void	test_memcmp(void);
 
 #endif
