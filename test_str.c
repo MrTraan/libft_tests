@@ -6,11 +6,33 @@
 /*   By: ngrasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 15:18:16 by ngrasset          #+#    #+#             */
-/*   Updated: 2015/11/24 15:36:36 by ngrasset         ###   ########.fr       */
+/*   Updated: 2015/11/24 16:12:48 by ngrasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests_libft.h"
+
+void	test_strcpy(void)
+{
+	char	*s1 = "Je suis la copie";
+	char	*s_true;
+	char	*true_ret;
+	char	*s_test;
+	char	*test_ret;
+
+	printf("\nTestin ft_strcpy\n");
+	s_true = malloc(20);
+	s_test = malloc(20);
+	s_true[19] = 'a';
+	s_test[19] = 'a';
+	true_ret = strcpy(s_true, s1);
+	test_ret = ft_strcpy(s_test, s1);
+	printf("%-20s %-20s %-20s\n%-20s %-20s %-20s\n",
+			"Expected result:", s_true, true_ret,
+				"Actual result:", s_test, test_ret);
+	free(s_true);
+	free(s_test);
+}
 
 void	test_strlen(void)
 {
