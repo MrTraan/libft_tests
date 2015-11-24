@@ -6,11 +6,33 @@
 /*   By: ngrasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 15:18:16 by ngrasset          #+#    #+#             */
-/*   Updated: 2015/11/24 18:07:48 by ngrasset         ###   ########.fr       */
+/*   Updated: 2015/11/24 18:40:32 by ngrasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests_libft.h"
+
+void	test_strnstr(void)
+{
+	char	*str = "Cherchez moi cherchez moi moi moi";
+
+	printf("\nTesting ft_strnstr\n");
+	printf("%-20s %-10s %-10s %-5s\n%-20s %-10s %-10s %-5s\n",
+			"Expected result:", strnstr(str, "moi", 40), strnstr(str, "Chercht", 5),
+				strnstr(str, "moi", 0), "Actual result:", ft_strnstr(str, "moi", 40),
+					ft_strnstr(str, "Chercht",  5), ft_strnstr(str, "moi", 0));
+}
+
+void	test_strstr(void)
+{
+	char	*str = "Cherchez moi cherchez moi moi moi";
+
+	printf("\nTesting ft_strstr\n");
+	printf("%-20s %-10s %-10s %-5s\n%-20s %-10s %-10s %-5s\n",
+			"Expected result:", strstr(str, "moi"), strstr(str, "Chercht"),
+				strstr("", "moi"), "Actual result:", ft_strstr(str, "moi"),
+					ft_strstr(str, "Chercht"), ft_strstr("", "moi"));
+}
 
 void	test_strrchr(void)
 {
