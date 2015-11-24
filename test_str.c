@@ -6,12 +6,48 @@
 /*   By: ngrasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 15:18:16 by ngrasset          #+#    #+#             */
-/*   Updated: 2015/11/24 16:24:41 by ngrasset         ###   ########.fr       */
+/*   Updated: 2015/11/24 16:48:52 by ngrasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests_libft.h"
 
+void	test_strncat(void)
+{
+	char	*src = " partie deux";
+	char	true_dst1[23] = {'p', 'a', 'r', 't', 'i', 'e', ' ', 'u', 'n' ,'\0'};
+	char	test_dst1[23] = {'p', 'a', 'r', 't', 'i', 'e', ' ', 'u', 'n' ,'\0'};
+	char	true_dst2[30] = {'p', 'a', 'r', 't', 'i', 'e', ' ', 'u', 'n' ,'\0'};
+	char	test_dst2[30] = {'p', 'a', 'r', 't', 'i', 'e', ' ', 'u', 'n' ,'\0'};
+	char	*true_ret;
+	char	*test_ret;
+
+	printf("\nTesting strncat\n");
+	true_ret = strncat(true_dst1, src, 4);
+	test_ret = ft_strncat(test_dst1, src, 4);
+	strncat(true_dst2, src, 25);
+	ft_strncat(test_dst2, src, 25);
+	printf("%-20s %-30s %-30s %-30s\n%-20s %-30s %-30s %-30s\n",
+			"Expected result:", true_dst1, true_ret, true_dst2,
+				"Actual result:", test_dst1, test_ret, true_dst2);
+}
+
+void	test_strcat(void)
+{
+	char	*src = " partie deux";
+	char	true_dst[23] = {'p', 'a', 'r', 't', 'i', 'e', ' ', 'u', 'n' ,'\0'};
+	char	test_dst[23] = {'p', 'a', 'r', 't', 'i', 'e', ' ', 'u', 'n' ,'\0'};
+	char	*true_ret;
+	char	*test_ret;
+
+	printf("\nTesting strcat\n");
+	true_ret = strcat(true_dst, src);
+	test_ret = ft_strcat(test_dst, src);
+	printf("%-20s %-30s %-30s\n%-20s %-30s %-30s\n",
+			"Expected result:", true_dst, true_ret,
+				"Actual result:", test_dst, test_ret);
+}
+	
 void	test_strncpy(void)
 {
 	char	*s1 = "Je suis la copie";
