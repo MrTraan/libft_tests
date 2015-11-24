@@ -6,7 +6,7 @@
 /*   By: ngrasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 17:24:06 by ngrasset          #+#    #+#             */
-/*   Updated: 2015/11/24 15:26:52 by ngrasset         ###   ########.fr       */
+/*   Updated: 2015/11/24 19:03:44 by ngrasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,24 +112,42 @@ void		test_memcpy(void)
 	char	*src = "aaaaaaaaa";
 	char	*dst_test;
 	char	*dst_true;
+	int		src_tab[4] = {4298, 8, 5, 2};
+	int		*tab_true;
+	int		*tab_test;
 
 	printf("\nTesting ft_memcpy\n");
 	dst_test = (char *)malloc(10);
 	dst_true = (char *)malloc(10);
+	tab_test = (int *)malloc(sizeof(int) * 4);
+	tab_true = (int *)malloc(sizeof(int) * 4);
 	dst_test[9] = '\0';
 	dst_true[9] = '\0';
 	ft_memset(dst_test, 'b', 9);
 	ft_memset(dst_true, 'b', 9);
 	ft_memcpy(dst_test, src, 3);
 	memcpy(dst_true, src, 3);
-	printf("%-20s %s\n%-20s %s\n",
+	printf("%-20s %-20s\n%-20s %s\n",
 			"Expected result:", dst_true, "Actual Result:", dst_test);
 	ft_memcpy(dst_test, src, 8);
 	memcpy(dst_true, src, 8);
 	printf("\n%-20s %s\n%-20s %s\n",
 			"Expected result:", dst_true, "Actual Result:", dst_test);
+	ft_memcpy(tab_test, src_tab, 16);
+	memcpy(tab_true, src_tab, 16);
+	printf("%-20s", "Expected result:");
+	for (int i = 0; i < 4; i++) {
+		printf("%-5d", tab_true[i]);
+	}
+	printf("\n%-20s", "Actual result::");
+	for (int i = 0; i < 4; i++) {
+		printf("%-5d", tab_test[i]);
+	}
+	printf("\n");
 	free(dst_test);
 	free(dst_true);
+	free(tab_test);
+	free(tab_true);
 }
 
 void		test_bzero(void)
