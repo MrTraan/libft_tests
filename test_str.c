@@ -6,11 +6,31 @@
 /*   By: ngrasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 15:18:16 by ngrasset          #+#    #+#             */
-/*   Updated: 2015/11/24 17:35:16 by ngrasset         ###   ########.fr       */
+/*   Updated: 2015/11/24 18:07:48 by ngrasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests_libft.h"
+
+void	test_strrchr(void)
+{
+	char	*str = "je suis une chaine sans s a partir d'ici";
+
+	printf("\nTesting ft_strrchr\n");
+	printf("%-20s %-10s %-10s\n%-20s %-10s %-10s\n",
+			"Expected result:", strrchr(str, 's'), strrchr(str, 'z'),
+				"Acutal result:", ft_strrchr(str, 's'), ft_strrchr(str, 'z'));
+}
+
+void	test_strchr(void)
+{
+	char	*str = "je suis une chaine sans s a partir d'ici";
+
+	printf("\nTesting ft_strchr\n");
+	printf("%-20s %-10s %-10s\n%-20s %-10s %-10s\n",
+			"Expected result:", strchr(str, 's'), strchr(str, 'z'),
+				"Acutal result:", ft_strchr(str, 's'), ft_strchr(str, 'z'));
+}
 
 void	test_strlcat(void)
 {
