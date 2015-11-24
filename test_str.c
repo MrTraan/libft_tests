@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests_libft.h                                      :+:      :+:    :+:   */
+/*   test_str.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngrasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 17:21:22 by ngrasset          #+#    #+#             */
-/*   Updated: 2015/11/24 15:21:47 by ngrasset         ###   ########.fr       */
+/*   Created: 2015/11/24 15:18:16 by ngrasset          #+#    #+#             */
+/*   Updated: 2015/11/24 15:24:07 by ngrasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTS_LIBFT_H
-# define TESTS_LIBFT_H
-# include <libft.h>
-# include <stdio.h>
-# include <string.h>
+#include "tests_libft.h"
 
-void	test_memccpy(void);
-void	test_memcpy(void);
-void	test_bzero(void);
-void	test_memset(void);
-void	test_memdel(void *ptr);
-void	test_memalloc(void);
-void	test_memmove(void);
-void	test_memchr(void);
-void	test_memcmp(void);
-void	test_strlen(void);
+void	test_strlen(void)
+{
+	char *s1 = "je suis tres long";
+	char *s2 = "court";
+	char *s3 = "";
 
-#endif
+	printf("\nTesting ft_strlen\n");
+	printf("%-20s %-10lu %-10lu %-10lu\n%-20s %-10lu %-10lu %-10lu\n",
+			"Expected result:", strlen(s1), strlen(s2), strlen(s3),
+				"Actual result:", ft_strlen(s1), ft_strlen(s2), ft_strlen(s3));
+}
