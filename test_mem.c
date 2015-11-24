@@ -6,7 +6,7 @@
 /*   By: ngrasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 17:24:06 by ngrasset          #+#    #+#             */
-/*   Updated: 2015/11/23 18:26:34 by ngrasset         ###   ########.fr       */
+/*   Updated: 2015/11/24 14:48:16 by ngrasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void		test_memmove(void)
 	ret_test = ft_memmove(dst_test, src, 7);
 	src = dst_true + 8;
 	ret_true = memmove(dst_true, src, 7);
-	printf("%-20s %-30s %-30s\n%-20s %-30s %-30s\n", "Expected result:", dst_true,
+	printf("\n%-20s %-30s %-30s\n%-20s %-30s %-30s\n", "Expected result:", dst_true,
 			ret_true, "Actual Result:", dst_test, ret_test);
 	free(dst_test);
 	free(dst_true);
@@ -90,7 +90,7 @@ void		test_memccpy(void)
 			ret_true, "Actual Result:", dst_test, ret_test);
 	ret_test = ft_memccpy(dst_test, src, 'z', 9);
 	ret_true = memccpy(dst_true, src, 'z', 9);
-	printf("%-20s %-20s %-20s\n%-20s %-20s %-20s\n", "Expected result:", dst_true,
+	printf("\n%-20s %-20s %-20s\n%-20s %-20s %-20s\n", "Expected result:", dst_true,
 			ret_true, "Actual Result:", dst_test, ret_test);
 	free(dst_test);
 	free(dst_true);
@@ -115,7 +115,7 @@ void		test_memcpy(void)
 			"Expected result:", dst_true, "Actual Result:", dst_test);
 	ft_memcpy(dst_test, src, 8);
 	memcpy(dst_true, src, 8);
-	printf("%-20s %s\n%-20s %s\n",
+	printf("\n%-20s %s\n%-20s %s\n",
 			"Expected result:", dst_true, "Actual Result:", dst_test);
 	free(dst_test);
 	free(dst_true);
@@ -140,7 +140,7 @@ void		test_bzero(void)
 			printf("%c ", str[i]);
 	}
 	ft_bzero(str, 4);
-	printf("\n%-20s \\0 \\0 \\0 \\0 a a a a a \\0 \n%-20s ",
+	printf("\n\n%-20s \\0 \\0 \\0 \\0 a a a a a \\0 \n%-20s ",
 			"Expected result:", "Actual result:");
 	for (int i = 0; i < 10; i++)
 	{
