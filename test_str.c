@@ -6,11 +6,41 @@
 /*   By: ngrasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 15:18:16 by ngrasset          #+#    #+#             */
-/*   Updated: 2015/11/24 16:12:48 by ngrasset         ###   ########.fr       */
+/*   Updated: 2015/11/24 16:24:41 by ngrasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests_libft.h"
+
+void	test_strncpy(void)
+{
+	char	*s1 = "Je suis la copie";
+	char	*s1_true;
+	char	*s2_true;
+	char	*true_ret;
+	char	*s1_test;
+	char	*s2_test;
+	char	*test_ret;
+
+	printf("\nTesting ft_strncpy\n");
+	s1_true = malloc(20);
+	s2_true = malloc(20);
+	s1_test = malloc(20);
+	s2_test = malloc(20);
+	s1_true[19] = 'a';
+	s1_test[19] = 'a';
+	true_ret = strncpy(s1_true, s1, 20);
+	test_ret = ft_strncpy(s1_test, s1, 20);
+	strncpy(s2_true, s1, 0);
+	ft_strncpy(s2_test, s1, 0);
+	printf("%-20s %-20s %-20s %-20s\n%-20s %-20s %-20s %-20s\n",
+			"Expected result:", s1_true, true_ret, s2_true,
+				"Actual result:", s1_test, test_ret, s2_test);
+	free(s1_true);
+	free(s2_true);
+	free(s1_test);
+	free(s2_test);
+}
 
 void	test_strcpy(void)
 {
@@ -20,7 +50,7 @@ void	test_strcpy(void)
 	char	*s_test;
 	char	*test_ret;
 
-	printf("\nTestin ft_strcpy\n");
+	printf("\nTesting ft_strcpy\n");
 	s_true = malloc(20);
 	s_test = malloc(20);
 	s_true[19] = 'a';
