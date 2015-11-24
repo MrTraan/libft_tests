@@ -1,5 +1,5 @@
 NAME = test
-TEST_FILES = maintest.c test_mem.c test_str.c
+TEST_FILES = maintest.c test_mem.c test_str.c test_num.c
 LIB_DIR = "../libft"
 INCLUDES = "-I../libft"
 

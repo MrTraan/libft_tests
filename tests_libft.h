@@ -6,13 +6,14 @@
 /*   By: ngrasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 17:21:22 by ngrasset          #+#    #+#             */
-/*   Updated: 2015/11/24 20:28:53 by ngrasset         ###   ########.fr       */
+/*   Updated: 2015/11/24 20:47:05 by ngrasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TESTS_LIBFT_H
 # define TESTS_LIBFT_H
 # include <libft.h>
+# include <stdlib.h>
 # include <stdio.h>
 # include <string.h>
 
@@ -38,5 +39,6 @@ void	test_strstr(void);
 void	test_strnstr(void);
 void	test_strcmp(void);
 void	test_strncmp(void);
+void	test_atoi(void);
 
 #endif
