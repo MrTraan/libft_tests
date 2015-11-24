@@ -6,7 +6,7 @@
 /*   By: ngrasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 17:21:22 by ngrasset          #+#    #+#             */
-/*   Updated: 2015/11/24 18:39:33 by ngrasset         ###   ########.fr       */
+/*   Updated: 2015/11/24 20:28:53 by ngrasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,7 @@ void	test_strchr(void);
 void	test_strrchr(void);
 void	test_strstr(void);
 void	test_strnstr(void);
+void	test_strcmp(void);
+void	test_strncmp(void);
 
 #endif

@@ -6,11 +6,33 @@
 /*   By: ngrasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 15:18:16 by ngrasset          #+#    #+#             */
-/*   Updated: 2015/11/24 18:40:32 by ngrasset         ###   ########.fr       */
+/*   Updated: 2015/11/24 20:29:41 by ngrasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests_libft.h"
+
+void	test_strncmp(void)
+{
+	char	*str1 = "je suis identique jusqu'ici";
+	char	*str2 = "je suis identique jusaue la";
+
+	printf("\nTesting ft_strncmp\n");
+	printf("%-20s %-5d %-5d\n%-20s %-5d %-5d\n", "Expected result:",
+			strncmp(str1, str2, 5), strncmp(str1, str2, 30), "Actual result:",
+				ft_strncmp(str1, str2, 5), ft_strncmp(str1, str2, 30));
+}
+
+void	test_strcmp(void)
+{
+	char	*str1 = "je suis identique jusqu'ici";
+	char	*str2 = "je suis identique jusaue la";
+
+	printf("\nTesting ft_strcmp\n");
+	printf("%-20s %-5d %-5d\n%-20s %-5d %-5d\n", "Expected result:",
+			strcmp(str1, str2), strcmp(str1, str1), "Actual result:",
+				ft_strcmp(str1, str2), ft_strcmp(str1, str1));
+}
 
 void	test_strnstr(void)
 {
