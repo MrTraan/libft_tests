@@ -6,11 +6,61 @@
 /*   By: ngrasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 15:18:16 by ngrasset          #+#    #+#             */
-/*   Updated: 2015/11/24 20:29:41 by ngrasset         ###   ########.fr       */
+/*   Updated: 2015/11/25 14:27:18 by ngrasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests_libft.h"
+
+void	test_strsplit(void)
+{
+	char	*s1 = "*salut*les***etudiants*";
+	char	**tab;
+	int		i;
+
+	printf("\nTesting ft_strsplit\n");
+	tab = ft_strsplit(s1, '*');
+	printf("%-20s %-30s\n%-20s ", "Expected result:", "salut les etudiants",
+			"Actual result:");
+	i = 0;
+	while (tab[i] != 0)
+	{
+		printf("%s ", tab[i]);
+		i++;
+	}
+	printf("\n");
+	//free(*tab);
+	free(tab);
+}
+
+void	test_strtrim(void)
+{
+	char	*src1 = "      salut     yo       hihi       ";
+	char	*src2 = "hey     coucou       lol";
+	char	*ret1;
+	char	*ret2;
+
+	printf("\nTesting ft_strtrim\n");
+	ret1 = ft_strtrim(src1);
+	ret2 = ft_strtrim(src2);
+	printf("%-20s %-30s %-30s\n%-20s %-30s %-30s\n", "Expected result:",
+			"salut     yo       hihi", "hey     coucou       lol",
+				"Actual result:", ret1, ret2);
+	free(ret1);
+	free(ret2);
+}
+
+void	test_strsub(void)
+{
+	char	*src = "ooooosalutoooo";
+	char	*dst;
+
+	printf("\nTesting ft_strsub\n");
+	dst = ft_strsub(src, 5, 5);
+	printf("%-20s %-10s\n%-20s %-10s\n", "Expected result:", "salut",
+			"Actual result:", dst);
+	free(dst);
+}
 
 void	test_strncmp(void)
 {
@@ -18,9 +68,11 @@ void	test_strncmp(void)
 	char	*str2 = "je suis identique jusaue la";
 
 	printf("\nTesting ft_strncmp\n");
-	printf("%-20s %-5d %-5d\n%-20s %-5d %-5d\n", "Expected result:",
-			strncmp(str1, str2, 5), strncmp(str1, str2, 30), "Actual result:",
-				ft_strncmp(str1, str2, 5), ft_strncmp(str1, str2, 30));
+	printf("%-20s %-5d %-5d %-5d\n%-20s %-5d %-5d %-5d\n", "Expected result:",
+			strncmp(str1, str2, 5), strncmp(str1, str2, 30),
+				strncmp("abc", "abcdef", 3), "Actual result:",
+					ft_strncmp(str1, str2, 5), ft_strncmp(str1, str2, 30),
+						ft_strncmp("abc", "abcdef", 3));
 }
 
 void	test_strcmp(void)

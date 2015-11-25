@@ -6,7 +6,7 @@
 /*   By: ngrasset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 17:21:22 by ngrasset          #+#    #+#             */
-/*   Updated: 2015/11/24 20:47:05 by ngrasset         ###   ########.fr       */
+/*   Updated: 2015/11/25 15:54:45 by ngrasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,9 @@ void	test_strnstr(void);
 void	test_strcmp(void);
 void	test_strncmp(void);
 void	test_atoi(void);
+void	test_strsub(void);
+void	test_strtrim(void);
+void	test_strsplit(void);
+void	test_itoa(void);
 
 #endif
